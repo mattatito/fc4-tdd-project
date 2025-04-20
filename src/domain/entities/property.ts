@@ -1,3 +1,5 @@
+import { DateRange } from "../value_objects/date_range";
+
 export class Property {
   constructor(
     private id: string,
@@ -6,11 +8,34 @@ export class Property {
     private maxGuest: number,
     private basePricePerNight: number
   ) {
+    if (!name) {
+      throw new Error("O nome é obrigatório.");
+    }
+    if (maxGuest <= 0) {
+      throw new Error("O número de hospedes deve que ser maior que zero.");
+    }
     this.id = id;
     (this.name = name),
       (this.description = description),
       (this.maxGuest = maxGuest);
     this.basePricePerNight = basePricePerNight;
+  }
+
+  validateGuestCount(guestCount: number): void {
+    if (guestCount > this.maxGuest) {
+      throw Error(
+        `O número máximo de hospedes excedido. Máximo permitido é ${this.maxGuest}`
+      );
+    }
+  }
+
+  calculateTotalPrice(dateRange: DateRange): number {
+    const totalNights = dateRange.getTotalNights();
+    let totalPrice = totalNights * this.basePricePerNight;
+    if (totalNights >= 7) {
+      totalPrice *= 0.9;
+    }
+    return totalPrice;
   }
 
   getId(): string {
