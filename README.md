@@ -1,5 +1,7 @@
 # fc4-tdd-booking-project
 
+Projeto realizado para relembrar conceitos do TDD. Projeto construído durante curso de TDD - Test Driven Development da plataforma Dev Full Cycle 4.0
+
 ## Sobre o projeto:
 
 Este projeto é um exemplo simplificado de um sistema de reservas de propriedades, inspirado em plataformas como o Airbnb. O objetivo é criar uma aplicação que permita aos usuários:
@@ -31,11 +33,3 @@ Este projeto é um exemplo simplificado de um sistema de reservas de propriedade
      - Seja maior que zero.
      - Não exceda a capacidade máxima definida para a propriedade.
    - Reservas que não atendem a esses critérios são rejeitadas, e o sistema informa o usuário com mensagens apropriadas.
-
----
-
-Fazer um reserva
-
-- user
-- property
-  Cancelar
