@@ -1,9 +1,13 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
+import { BookingEntity } from "./booking_entity";
 
 @Entity("properties")
 export class PropertyEntity {
   @PrimaryColumn("uuid")
   id!: string;
+
+  @OneToMany(() => BookingEntity, (booking) => booking.property)
+  bookings!: BookingEntity;
 
   @Column()
   name!: string;

@@ -12,7 +12,7 @@ export class PropertyMapper {
     );
   }
 
-  static toPersistance(domain: Property): PropertyEntity {
+  static toPersistence(domain: Property): PropertyEntity {
     const entity = new PropertyEntity();
     entity.id = domain.getId();
     entity.name = domain.getName();

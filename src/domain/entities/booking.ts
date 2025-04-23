@@ -51,7 +51,7 @@ export class Booking {
     return this.property;
   }
 
-  getUser(): User {
+  getGuest(): User {
     return this.user;
   }
 
