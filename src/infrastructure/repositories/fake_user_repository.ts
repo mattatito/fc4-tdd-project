@@ -8,7 +8,7 @@ export class FakeUserRepository implements UserRepository {
     return this.users.find((user) => user.getId() === id) || null;
   }
 
-  async saveUser(user: User) {
+  async save(user: User) {
     this.users.push(user);
   }
 }

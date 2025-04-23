@@ -27,7 +27,7 @@ describe("User Service", () => {
 
   it("deve salvar um novo usuário com uscesso usando repositorio fake e buscando novamente", async () => {
     const newUser = new User("3", "Test User");
-    await fakeUserRepository.saveUser(newUser);
+    await fakeUserRepository.save(newUser);
 
     const user = await userService.findUserById("3");
 
