@@ -1,6 +1,6 @@
 export class User {
-  private name: String;
-  private id: String;
+  private name: string;
+  private id: string;
 
   constructor(id: string, name: string) {
     if (!name) {
@@ -12,11 +12,11 @@ export class User {
     (this.id = id), (this.name = name);
   }
 
-  getId(): String {
+  getId(): string {
     return this.id;
   }
 
-  getName(): String {
+  getName(): string {
     return this.name;
   }
 }
